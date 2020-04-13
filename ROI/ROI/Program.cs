@@ -17,12 +17,15 @@ namespace ROI
             Mat src = new Mat(imgPath);
             Mat dst = src.SubMat(new Rect(300, 300, 500, 500));
 
-            Mat trg = new Mat();
+            // 제로패딩 
+            Mat zeroPadding = new Mat();
 
-            Cv2.ImShow("src",src);
+            var M = Cv2.GetAffineTransform()
+
+
+            Cv2.ImShow("src", src);
+            // Roi
             Cv2.ImShow("dst", dst);
-
-            Cv2.CopyMakeBorder
 
             Cv2.WaitKey(0);
         }
