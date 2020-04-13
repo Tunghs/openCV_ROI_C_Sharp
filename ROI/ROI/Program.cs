@@ -39,6 +39,20 @@ namespace ROI
 
             Cv2.ImShow("zeroPadding", zeroPadding);
 
+            int intensity1 = zeroPadding.At<byte>(200, 100);
+            int intensity2 = zeroPadding.At<byte>(499, 499);
+            int intensity3 = zeroPadding.At<byte>(2, 2);
+
+            int intensity_b = zeroPadding.At<Vec3b>(450, 450)[0];
+            int intensity_g = zeroPadding.At<Vec3b>(450, 450)[1];
+            int intensity_r = zeroPadding.At<Vec3b>(450, 450)[2];
+            //Cv2.ImWrite(@"C:\Users\dljdg\Desktop\보내줄 사진\zero.png", zeroPadding);
+            Console.WriteLine(intensity1);
+            Console.WriteLine(intensity2);
+            Console.WriteLine(intensity3);
+
+            Console.WriteLine("R:{0}, G:{1}, B{2}", intensity_r, intensity_g, intensity_b);
+
             Cv2.WaitKey(0);
         }
     }
